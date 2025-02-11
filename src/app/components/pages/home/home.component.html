@@ -1,3 +1,30 @@
-<div>
-  <p>Home Component</p>
+<div style="display: flex; flex-direction: column;">
+  <div class="pl-lg pt-lg pr-lg">
+    <mat-toolbar-row>
+      <h1 class="title">Olá, Cliente!</h1>
+      <p class="subtitle">Controle seus cartões e acompanhe suas transações de forma simples e segura.</p>
+    </mat-toolbar-row>
+  </div>
+
+  <div class="container pl-lg pt-lg pr-lg">
+    <section class="cards-container">
+      <!-- <h4>Cartões</h4> -->
+      @for (card of cards; track card.id) {
+      <div class="pb-md">
+        <app-card [bank]="card.bank" [id]="card.id" [number]="card.number" [bank]="card.bank" [type]="card.type"
+          [brand]="card.brand" [limitAvailable]="card.limitAvailable" [bestPurchaseDay]="card.bestPurchaseDay"
+          (onClick)="onCardClick()"></app-card>
+      </div>
+      } @empty {
+      <p>Sua lista de cartões está vazia.</p>
+      }
+    </section>
+    <div class="flex p-lg">
+      <mat-divider [vertical]=" true"></mat-divider>
+    </div>
+    <section class="transactions-container">
+      <app-transaction></app-transaction>
+    </section>
+  </div>
+
 </div>

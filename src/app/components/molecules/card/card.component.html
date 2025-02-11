@@ -1,0 +1,37 @@
+<div [style.--dynamic-color]="color" class="card" (click)="handleClick()">
+  <div class="card-header pl-lg pt-lg pb-lg">
+    <div class="bank-card">
+      <img src="assets/icons/visa.svg" alt="Visa" width="60">
+      <div class="ph-md">
+        <h3>●●●● {{number}}</h3>
+        <label>{{bank}}</label>
+      </div>
+    </div>
+    <button mat-button (click)="onShowLimit()">
+      @if(showLimit()){
+      <mat-icon aria-hidden="false" aria-label="visibility" fontIcon="visibility"></mat-icon>
+      }@else{
+      <mat-icon aria-hidden="false" aria-label="visibility" fontIcon="visibility_off"></mat-icon>
+      }
+    </button>
+  </div>
+
+  <div class="ph-lg">
+    <mat-divider></mat-divider>
+  </div>
+
+  <div class="card-footer p-lg">
+    <div>
+      <p> Limite disponível</p>
+      @if(showLimit()){
+      <h3>R$ {{limitAvailable}}</h3>
+      }@else{
+      <h3>R$ ●●●●</h3>
+      }
+    </div>
+    <div>
+      <p> Melhor dia de compra</p>
+      <h3>{{bestPurchaseDay}}</h3>
+    </div>
+  </div>
+</div>

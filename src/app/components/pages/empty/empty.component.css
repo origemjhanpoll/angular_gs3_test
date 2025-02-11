@@ -1,0 +1,24 @@
+:host {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+
+  text-align: center;
+}
+
+.content h3,
+.content p {
+  margin: 0;
+  padding: 0;
+}
+.content p {
+  color: var(--text-secondary);
+}
