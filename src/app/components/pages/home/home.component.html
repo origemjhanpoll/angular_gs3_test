@@ -1,4 +1,4 @@
-<div style="display: flex; flex-direction: column;">
+<div>
   <div class="pl-lg pt-lg pr-lg">
     <mat-toolbar-row>
       <h1 class="title">Olá, Cliente!</h1>
@@ -13,7 +13,7 @@
       <div class="pb-md">
         <app-card [bank]="card.bank" [id]="card.id" [number]="card.number" [bank]="card.bank" [type]="card.type"
           [brand]="card.brand" [limitAvailable]="card.limitAvailable" [bestPurchaseDay]="card.bestPurchaseDay"
-          (onClick)="onCardClick()"></app-card>
+          (onClick)="onCardClick(card.transactions)"></app-card>
       </div>
       } @empty {
       <p>Sua lista de cartões está vazia.</p>
@@ -22,8 +22,22 @@
     <div class="flex p-lg">
       <mat-divider [vertical]=" true"></mat-divider>
     </div>
-    <section class="transactions-container">
-      <app-transaction></app-transaction>
+    <section class="transactions-container pv-lg">
+      <mat-card>
+        <mat-list role="list">
+          @for (transaction of transactions; track transaction.id) {
+          <div class="pb-md">
+            <mat-list-item role="listitem">
+              <app-transaction [amount]="transaction.amount" [category]="transaction.category"
+                [merchant]="transaction.merchant" [date]="transaction.date"
+                [installments]="transaction.installments"></app-transaction>
+            </mat-list-item>
+          </div>
+          } @empty {
+          <p>Sua lista de transações está vazia.</p>
+          }
+        </mat-list>
+      </mat-card>
     </section>
   </div>
 

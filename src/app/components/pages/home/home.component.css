@@ -17,8 +17,8 @@ mat-divider.mat-divider-vertical {
 
 .container {
   display: flex;
-  flex-direction: row; /* Organiza as seções na horizontal */
-  height: calc(100vh - 76px); /* Ocupa toda a altura da tela */
+  flex-direction: row;
+  height: calc(100vh - 76px);
 }
 
 .cards-container {
@@ -27,8 +27,5 @@ mat-divider.mat-divider-vertical {
 
 .transactions-container {
   display: flex;
-  flex: 1;
-  justify-content: center; /* Centraliza o conteúdo horizontalmente */
-  align-items: center; /* Centraliza o conteúdo verticalmente */
-  width: 100%; /* Garante que a seção ocupe toda a largura disponível */
+  /* flex-direction: column; */
 }

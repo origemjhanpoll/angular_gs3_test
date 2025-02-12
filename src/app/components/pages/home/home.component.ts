@@ -9,6 +9,8 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { TransactionComponent } from '../../molecules/transaction/transaction.component';
+import { TransactionModel } from '../../../models/transaction.model';
+import { MatListModule } from '@angular/material/list';
 
 @Component({
   selector: 'app-home',
@@ -22,24 +24,29 @@ import { TransactionComponent } from '../../molecules/transaction/transaction.co
     MatDividerModule,
     MatButtonModule,
     MatCardModule,
+    MatListModule,
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css', './home.component.css'],
 })
 export class HomeComponent implements OnInit {
   cards: CardModel[] = [];
+  transactions: TransactionModel[] = [];
 
   constructor(private cardsService: CardsService) {}
 
   ngOnInit(): void {
     this.cardsService.loadCards().subscribe({
-      next: (cards) => (this.cards = [...cards, ...cards, ...cards]),
+      next: (cards) => {
+        this.cards = cards;
+        this.transactions = cards[0].transactions;
+      },
       error: (error) => console.error('Erro ao carregar os cartões', error),
       complete: () => console.log('Carregamento dos cartões completo'),
     });
   }
 
-  onCardClick() {
-    console.log('Botão do filho clicado!');
+  onCardClick(transactions: TransactionModel[]) {
+    this.transactions = transactions;
   }
 }
