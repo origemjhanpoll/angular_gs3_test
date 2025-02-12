@@ -24,7 +24,6 @@ A estrutura do projeto é organizada de forma modularizada:
  ├── app
  │   ├── models              # Modelos de dados
  │   ├── services            # Serviços e requisições HTTP
- │   ├── viewmodels          # ViewModels (lógica de negócios e estado)
  │   ├── components          # Componentes reutilizáveis
  │   │   ├── widgets         # Widgets da aplicação
  │   │   ├── pages           # Telas da aplicação
