@@ -1,0 +1,50 @@
+/* Ocultar o Bottom App Bar por padrão em telas maiores */
+.bottom-app-bar {
+  display: none;
+}
+
+/* Exibir o Bottom App Bar apenas em telas pequenas (máximo de 768px) */
+@media (max-width: 768px) {
+  .bottom-app-bar {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 10px 0;
+  }
+
+  .bottom-app-bar ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .bottom-app-bar li {
+    display: flex;
+    align-items: center;
+  }
+
+  .bottom-app-bar .icon {
+    font-size: 24px;
+  }
+
+  .bottom-app-bar .text {
+    display: none;
+  }
+
+  .bottom-app-bar li.active .icon {
+    color: #007bff; /* Cor do ícone ativo */
+  }
+
+  /* Exibir texto ao lado do ícone em telas pequenas */
+  .bottom-app-bar .text {
+    display: inline;
+    margin-left: 5px;
+  }
+}

@@ -1,3 +1,4 @@
+/* Estilo da Sidebar */
 .sidebar {
   width: 250px;
   background-color: var(--primary-color);
@@ -7,26 +8,38 @@
   flex-direction: column;
 }
 
+/* Esconder a Sidebar em telas menores que 768px */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+/* Estilo do Header da Sidebar */
 .sidebar-header {
   text-align: center;
   padding: 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+/* Logo */
 .logo {
   max-width: 80px;
 }
 
+/* Estilo da Lista */
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
+/* Estilo do Item da Lista */
 li {
   padding: 15px 20px;
 }
 
+/* Estilo do Link */
 a {
   display: flex;
   align-items: center;
@@ -38,15 +51,18 @@ a {
   border-radius: 8px;
 }
 
+/* Efeito de Hover no Link */
 a:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+/* Estilo do Ícone */
 .icon {
   margin-right: 10px;
   font-size: 20px;
 }
 
+/* Estilo do Item Ativo */
 .active a {
   font-weight: bold;
   background-color: rgba(255, 255, 255, 0.3);

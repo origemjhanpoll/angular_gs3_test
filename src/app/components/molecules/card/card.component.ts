@@ -23,7 +23,8 @@ export class CardComponent implements OnInit {
   showLimit = signal(true);
   color: string = '#346cbd';
 
-  @Input() id: number | undefined;
+  @Input() isActive: boolean = false;
+  @Input() id!: number;
   @Input() number: string | undefined;
   @Input() bank: string | undefined;
   @Input() type: string | undefined;

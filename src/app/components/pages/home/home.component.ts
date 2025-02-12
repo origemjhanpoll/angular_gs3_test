@@ -32,21 +32,24 @@ import { MatListModule } from '@angular/material/list';
 export class HomeComponent implements OnInit {
   cards: CardModel[] = [];
   transactions: TransactionModel[] = [];
+  activedCardIndex!: number;
 
   constructor(private cardsService: CardsService) {}
 
   ngOnInit(): void {
+    this.activedCardIndex = 0;
     this.cardsService.loadCards().subscribe({
       next: (cards) => {
         this.cards = cards;
-        this.transactions = cards[0].transactions;
+        this.transactions = this.cards[0].transactions;
       },
       error: (error) => console.error('Erro ao carregar os cartões', error),
       complete: () => console.log('Carregamento dos cartões completo'),
     });
   }
 
-  onCardClick(transactions: TransactionModel[]) {
-    this.transactions = transactions;
+  onCardClick(card: CardModel, index: number) {
+    this.activedCardIndex = index;
+    this.transactions = card.transactions;
   }
 }

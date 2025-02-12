@@ -1,19 +1,15 @@
-<div class="transaction-container">
-  <div>
-    <h4>
-      {{merchant}}
-    </h4>
-    <p>
-      {{formattedDate}}
-    </p>
+<div class="transaction-container p-md">
+  <div class="flex">
+    <div class="icon p-sm">
+      <img src="{{icon}}" alt="icon-category" width="32">
+    </div>
+    <div class="transaction-content pl-md">
+      <div class="content-title pb-sm">{{merchant}}</div>
+      <div class="content-subtitle-1">{{formattedDate}}</div>
+    </div>
   </div>
-
-  <div>
-    {{amount}}
-    {{installments}}
+  <div class="transaction-content">
+    <div class="content-title">{{amount}}</div>
+    @if(installments! > 1) {<div class="content-subtitle-2">em {{installments}}x</div>}
   </div>
-
-
-
-
 </div>

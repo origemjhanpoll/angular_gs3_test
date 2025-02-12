@@ -1,4 +1,4 @@
-<div [style.--dynamic-color]="color" class="card" (click)="handleClick()">
+<div [ngClass]="{'active': isActive}" [style.--dynamic-color]="color" class="card" (click)="handleClick()">
   <div class="card-header pl-lg pt-lg pb-lg">
     <div class="bank-card">
       <img src="assets/icons/visa.svg" alt="Visa" width="60">

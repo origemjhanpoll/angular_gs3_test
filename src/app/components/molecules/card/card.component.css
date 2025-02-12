@@ -7,9 +7,19 @@
   );
   border-radius: 24px;
   color: white;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   font-family: Arial, sans-serif;
   cursor: pointer;
+  transform: scale(0.96);
+  opacity: 0.5;
+  transition: transform 300ms ease, opacity 300ms ease;
+}
+.card:hover {
+  transform: scale(1);
+  opacity: 1;
+}
+.card.active {
+  transform: scale(1);
+  opacity: 1;
 }
 
 .card-header {
@@ -22,9 +32,11 @@ mat-divider {
   border-width: 2px;
   opacity: 0.2;
 }
+
 button[mat-button] {
   width: 20px;
 }
+
 mat-icon {
   color: white;
 }
