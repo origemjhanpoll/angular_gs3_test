@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { CardsService } from '../../../services/cards.service';
 import { CardModel } from '../../../models/card.model';
-import { CardComponent } from '../../molecules/card/card.component';
+import { CardComponent } from '../../widgets/card/card.component';
 import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { TransactionComponent } from '../../molecules/transaction/transaction.component';
+import { TransactionComponent } from '../../widgets/transaction/transaction.component';
 import { TransactionModel } from '../../../models/transaction.model';
 import { MatListModule } from '@angular/material/list';
 
