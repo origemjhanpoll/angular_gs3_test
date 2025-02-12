@@ -1,59 +1,77 @@
-# AngularGs3Test
+# 📱 Aplicativo de Cartões
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.
+Este aplicativo exibe uma lista de cartões do cliente, permitindo visualizar transações e informações relevantes de cada cartão. Foi desenvolvido em **Angular**, com foco em **web**, podendo ser acessado pelo navegador do celular.
 
-## Development server
+## 📸 Capturas de Tela
 
-To start a local development server, run:
+### Telas
 
-```bash
-ng serve
+![mobile](public/assets/media/screen.png)
+
+## 🚀 Tecnologias Utilizadas
+
+- **Linguagem:** TypeScript
+- **Framework:** Angular
+- **Arquitetura:** MVVM (Model-View-ViewModel)
+- **Gerenciamento de estado:** Serviços Angular
+
+## 📂 Estrutura do Projeto
+
+A estrutura do projeto é organizada de forma modularizada:
+
+```
+/src
+ ├── app
+ │   ├── models              # Modelos de dados
+ │   ├── services            # Serviços e requisições HTTP
+ │   ├── viewmodels          # ViewModels (lógica de negócios e estado)
+ │   ├── components          # Componentes reutilizáveis
+ │   │   ├── widgets         # Widgets da aplicação
+ │   │   ├── pages           # Telas da aplicação
+ ├── core
+ │   ├── shared              # Componentes compartilhados (AppBar, Navbar, etc.)
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 📌 Instruções para Execução
 
-## Code scaffolding
+### Pré-requisitos
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Certifique-se de ter instalado:
 
-```bash
-ng generate component component-name
-```
+- **Node.js** ([https://nodejs.org](https://nodejs.org))
+- **Angular CLI** ([https://angular.io/guide/setup-local](https://angular.io/guide/setup-local))
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Como rodar o projeto
 
-```bash
-ng generate --help
-```
+1. Clone o repositório:
 
-## Building
+   ```bash
+   git clone https://github.com/origemjhanpoll/angular_gs3_test
+   cd angular_gs3_test
+   ```
 
-To build the project run:
+2. Instale as dependências:
 
-```bash
-ng build
-```
+   ```bash
+   npm install
+   ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+3. Execute o aplicativo:
 
-## Running unit tests
+   ```bash
+   ng serve
+   ```
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+4. Abra o navegador e acesse:
 
-```bash
-ng test
-```
+   ```bash
+   http://localhost:4200
+   ```
 
-## Running end-to-end tests
+## 🤝 Contribuição
 
-For end-to-end (e2e) testing, run:
+Sinta-se à vontade para abrir issues ou contribuir com melhorias!
 
-```bash
-ng e2e
-```
+## 📄 Licença
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Este projeto está sob a licença MIT.
