@@ -1,12 +1,12 @@
-<div class="pl-lg pt-lg pr-lg">
+<div class="p-lg">
   <mat-toolbar-row>
     <h1 class="title">Olá, Cliente!</h1>
     <p class="subtitle">Controle seus cartões e acompanhe suas transações de forma simples e segura.</p>
   </mat-toolbar-row>
 </div>
 
-<div class="container pl-lg pt-lg pr-lg">
-  <section class="cards-container">
+<div class="container">
+  <section class="cards-container ph-lg">
     @for (card of cards; track card.id; let idx = $index) {
     <div class="pb-md">
       <app-card [isActive]="idx === activedCardIndex" [bank]="card.bank" [id]="card.id" [number]="card.number"
@@ -19,23 +19,17 @@
     </div>
     }
   </section>
-  <div class="flex p-lg">
-    <mat-divider [vertical]="true"></mat-divider>
-  </div>
-  <section class="transactions-container">
+  <section class="transactions-container p-lg">
     <mat-card>
-      <div #transactionsContainer class="sroll p-sm">
-        @for (transaction of transactions; track transaction.id) {
-        <app-transaction [amount]="transaction.amount" [category]="transaction.category"
-          [merchant]="transaction.merchant" [date]="transaction.date"
-          [installments]="transaction.installments"></app-transaction>
-        @if(transaction != transactions.at(-1)){<div class="ph-md"><mat-divider></mat-divider></div>}
-        } @empty {
-        <div class="container-empty">
-          <p>Sua lista de transações está vazia.</p>
-        </div>
-        }
+      @for (transaction of transactions; track transaction.id) {
+      <app-transaction [amount]="transaction.amount" [category]="transaction.category" [merchant]="transaction.merchant"
+        [date]="transaction.date" [installments]="transaction.installments"></app-transaction>
+      @if(transaction != transactions.at(-1)){<div class="ph-md"><mat-divider></mat-divider></div>}
+      } @empty {
+      <div class="container-empty">
+        <p>Sua lista de transações está vazia.</p>
       </div>
+      }
     </mat-card>
   </section>
 </div>

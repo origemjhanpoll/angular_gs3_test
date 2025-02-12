@@ -1,9 +1,7 @@
-/* Ocultar o Bottom App Bar por padrão em telas maiores */
 .bottom-app-bar {
   display: none;
 }
 
-/* Exibir o Bottom App Bar apenas em telas pequenas (máximo de 768px) */
 @media (max-width: 768px) {
   .bottom-app-bar {
     display: block;
@@ -27,24 +25,37 @@
 
   .bottom-app-bar li {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+  }
+
+  .bottom-app-bar a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #666;
+    transition: color 0.3s ease;
   }
 
   .bottom-app-bar .icon {
-    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    margin-bottom: 4px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
   }
 
   .bottom-app-bar .text {
-    display: none;
+    font-size: 12px;
   }
 
+  .bottom-app-bar li.active a {
+    color: #007bff;
+  }
   .bottom-app-bar li.active .icon {
-    color: #007bff; /* Cor do ícone ativo */
-  }
-
-  /* Exibir texto ao lado do ícone em telas pequenas */
-  .bottom-app-bar .text {
-    display: inline;
-    margin-left: 5px;
+    filter: invert(29%) sepia(100%) saturate(3967%) hue-rotate(193deg)
+      brightness(97%) contrast(101%);
   }
 }

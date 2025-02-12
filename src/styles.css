@@ -213,8 +213,6 @@ a:hover {
   color: var(--link-hover);
 }
 
-/* Exemplo de texto */
-
 p.secondary-text {
   color: var(--text-secondary);
 }
@@ -223,7 +221,6 @@ p.muted-text {
   color: var(--text-muted);
 }
 
-/* Exemplo de destaque */
 .highlight {
   background-color: var(--highlight-color);
   color: #fff;

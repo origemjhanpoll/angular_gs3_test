@@ -29,7 +29,6 @@ mat-divider.mat-divider-vertical {
 .cards-container {
   overflow-y: auto;
   scrollbar-width: none;
-  width: 350px;
   height: calc(100vh - 11.3vh);
 }
 
@@ -41,7 +40,6 @@ mat-divider.mat-divider-vertical {
   overflow-y: auto;
 }
 
-/* Responsividade para telas menores */
 @media (max-width: 768px) {
   .title {
     font-size: 20px;
@@ -70,7 +68,6 @@ mat-divider.mat-divider-vertical {
   }
 }
 
-/* Responsividade para telas ainda menores (por exemplo, dispositivos móveis) */
 @media (max-width: 480px) {
   .title {
     font-size: 18px;
